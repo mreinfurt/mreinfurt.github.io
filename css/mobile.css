@@ -1,6 +1,6 @@
 #avatar {
- width: 80%;
- height: 80%;
+    width: 70%;
+    height: 70%;
 }
 
 #intro-title {
@@ -13,16 +13,39 @@
 }
 
 p {
-    font-size: 3em;
+    font-size: 2.5em;
 }
 
-.social-media-icon  {
-    font-size: 100px;
-    line-height: 1.5em;
-    width: 1.5em;
-    height: 1.5em;
-    display: block;
+.TUIr4b {
+    size: 2em;
+}
+
+button {
+    font-size: 0.6em;
+    line-height: 1.25em !important;
+    font-style: normal;
+    margin: 0em 8px;
+}
+
+span {
+    font-size: 0.5em;
+}
+
+#or {
+    margin: 0;
+}
+
+#social-media-container {
+    margin-bottom: 80px;
+    margin-top: 80px;
+}
+
+.social-media-icon {
+    font-size: 3em;
+    line-height: 1em;
+    padding: 24px;
+    width: 1em;
+    height: 1em;
     text-align: center;
-    margin: 0 auto;
-    margin-bottom: 0.75em;
+    margin: 0 0.25em;
 }
