@@ -5,17 +5,17 @@ import Card from '../components/Card.astro'
 import ProjectCard from '../components/ProjectCard.astro'
 import Label from '../components/Label.astro'
 import SkillLayout from '../components/SkillLayout.astro'
-import PostPreview from '@/components/blog/PostPreview.astro'
 
 import { Image } from 'astro:assets'
-import astro from '../assets/about-astro.png'
+import profileImage from '../assets/profile.jpeg'
 
 import { getAllPosts, sortMDByDate } from '@/utils'
 
-const languages = ['lorem', 'ipsum']
-const frontend = ['lorem', 'ipsum', 'lorem', 'ipsum', 'lorem', 'ipsum', 'lorem']
-const backend = ['lorem', 'ipsum', 'lorem', 'ipsum']
-const others = ['lorem', 'ipsum', 'lorem', 'ipsum', 'lorem']
+const cloud = ['Azure Cloud']
+const backend = ['.NET/C#']
+const cicd = ['Azure DevOps', 'GitHub', 'GitLab']
+const iac = ['Azure Resource Manager', 'Azure Bicep']
+const others = ['Docker', 'Kubernetes']
 
 const MAX_POSTS = 10
 const allPosts = await getAllPosts()
@@ -26,37 +26,17 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 	<div class='flex w-full flex-col gap-y-10'>
 		<section class='flex flex-col items-center gap-y-7'>
 			<Image
-				src={astro}
+				src={profileImage}
 				alt='profile photo'
-				class='h-28 w-auto rounded-full bg-[#FFBE98] p-2'
+				class='h-28 w-auto rounded-full bg-[#555555] p-1'
 				loading='eager'
 			/>
 
 			<div class='flex flex-col items-center gap-y-4'>
-				<h1 class='text-3xl font-bold'>Lorem ipsum dolor</h1>
-				<a
-					href='https://github.com/srleom/astro-theme-resume.git'
-					class='flex flex-row items-center gap-x-3 rounded-3xl border border-input px-4 py-2 text-sm shadow-sm transition-all hover:shadow-md'
-				>
-					<span class='relative flex items-center justify-center'>
-						<span
-							class='absolute inline-flex h-2 w-2 animate-ping rounded-full border border-green-400 bg-green-400 opacity-75'
-						></span>
-						<span class='relative inline-flex h-2 w-2 rounded-full bg-green-400'></span>
-					</span>
-
-					<p class='font-medium'>Get free template</p>
-				</a>
+				<h1 class='text-3xl font-bold'>Manuel Reinfurt</h1>
+				<span class='text-2xl'>Freelance Azure Cloud Architect & Engineer</span>
 				<div class='flex flex-wrap justify-center gap-x-7 gap-y-3'>
-					<Label title='Lorem Ipsum'>
-						<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='h-5 w-5' slot='icon'
-							><path
-								fill='currentColor'
-								d='M4.615 20q-.69 0-1.152-.462Q3 19.075 3 18.385v-9.77q0-.69.463-1.152Q3.925 7 4.615 7H9V5.615q0-.69.463-1.152Q9.925 4 10.615 4h2.77q.69 0 1.153.463q.462.462.462 1.152V7h4.385q.69 0 1.152.463q.463.462.463 1.152v9.77q0 .69-.462 1.152q-.463.463-1.153.463zm0-1h14.77q.23 0 .423-.192q.192-.193.192-.423v-9.77q0-.23-.192-.423Q19.615 8 19.385 8H4.615q-.23 0-.423.192Q4 8.385 4 8.615v9.77q0 .23.192.423q.193.192.423.192M10 7h4V5.615q0-.23-.192-.423Q13.615 5 13.385 5h-2.77q-.23 0-.423.192q-.192.193-.192.423zM4 19V8z'
-							></path></svg
-						>
-					</Label>
-					<Label title='Ipsum'>
+					<Label title='Düsseldorf'>
 						<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='h-5 w-5' slot='icon'
 							><path
 								fill='currentColor'
@@ -65,9 +45,9 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 						>
 					</Label>
 					<Label
-						title='Connect on Linkedin'
+						title='LinkedIn'
 						as='a'
-						href='https://www.linkedin.com/in/example/'
+						href='http://linkedin.com/in/manuel-reinfurt-1868a1153/'
 						target='_blank'
 					>
 						<svg
@@ -81,150 +61,80 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 							></path></svg
 						>
 					</Label>
+					<Label
+						title='GitHub'
+						as='a'
+						href='http://github.com/mreinfurt'
+						target='_blank'
+					>
+						<svg
+							xmlns='http://www.w3.org/2000/svg'
+							viewBox='0 0 16 16'
+							slot='icon'
+							class='h-5 w-5 text-foreground/75'
+							><path
+								fill='currentColor'
+								d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"							></path></svg
+						>
+					</Label>
 				</div>
 			</div>
 		</section>
 
-		<Section title='About'>
+		<Section title='Services'>
 			<p class='text-muted-foreground'>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis atque quia omnis
-				consectetur, voluptas praesentium veniam blanditiis ratione asperiores accusantium laborum
-				odit commodi quis deserunt incidunt et dolor iure ut! Lorem ipsum dolor sit, amet
-				consectetur adipisicing elit. Alias quia, doloribus ut beatae perspiciatis voluptatibus.
+				Azure Cloud Architect & Engineer<br>
+				Cloud (Native) Architecture & Development<br>
+				Development and DevSecOps engineering culture<br>
+				Interim-Leadership (Lead Developer, Technical Product Owner)<br>
 			</p>
 		</Section>
-		{
-			allPostsByDate.length > 0 && (
-				<Section title='Posts'>
-					<ul class='flex flex-col gap-y-2'>
-						{allPostsByDate.map((p) => (
-							<li class='flex flex-col gap-x-2 sm:flex-row'>
-								<PostPreview post={p} />
-							</li>
-						))}
-					</ul>
-				</Section>
-			)
-		}
-
-		<Section title='Experience'>
-			<Card
-				heading='Lorem Ipsum'
-				subheading='Sit amet consectetur'
-				date='Dec 2022 - Nov 2023'
-				imagePath='/src/assets/about-astro.png'
-				altText='Lorem, ipsum dolor sit'
-				imageClass='h-12 w-auto md:-left-16'
-			>
-				<ul class='ml-4 list-disc text-muted-foreground'>
-					<li>
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore debitis recusandae, ut
-						molestiae laboriosam pariatur!
-
-						<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, pariatur!</li>
-					</li>
-				</ul>
-			</Card>
-			<Card
-				heading='Lorem Ipsum'
-				subheading='Sit amet consectetur'
-				date='Dec 2022 - Nov 2023'
-				imagePath='/src/assets/about-astro.png'
-				altText='Lorem, ipsum dolor sit'
-				imageClass='h-12 w-auto md:-left-16'
-			/>
-		</Section>
-
-		<Section title='Education'>
-			<Card
-				heading='Lorem Ipsum'
-				subheading='Sit amet consectetur'
-				date='Dec 2022 - Nov 2023'
-				imagePath='/src/assets/about-astro.png'
-				altText='Lorem, ipsum dolor sit'
-				imageClass='h-12 w-auto md:-left-16'
-			>
-				<ul class='ml-4 list-disc text-muted-foreground'>
-					<li>
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore debitis recusandae, ut
-						molestiae laboriosam pariatur!
-
-						<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, pariatur!</li>
-					</li>
-				</ul>
-			</Card>
-			<Card
-				heading='Lorem Ipsum'
-				subheading='Sit amet consectetur'
-				date='Dec 2022 - Nov 2023'
-				imagePath='/src/assets/about-astro.png'
-				altText='Lorem, ipsum dolor sit'
-				imageClass='h-12 w-auto md:-left-16'
-			/>
-		</Section>
-
-		<Section title='Projects'>
-			<div class='flex flex-col gap-y-3 sm:flex-row sm:gap-x-3 sm:gap-y-0'>
-				<ProjectCard
-					href='https://www.google.com'
-					heading='Consectetur'
-					subheading='Lorem ipsum dolor sit amet consectetur adipisicing elit.'
-					imagePath='/src/assets/coming-soon.png'
-					altText='Example'
-					class='w-full sm:w-1/2'
-				/>
-				<ProjectCard
-					as='div'
-					heading='Coming soon...'
-					subheading=''
-					imagePath='/src/assets/coming-soon.png'
-					altText='Lorem, ipsum dolor sit'
-					class='w-full sm:w-1/2'
-				/>
-			</div>
+		
+		<Section title='Work Experience'>
+			<a href='https://www.linkedin.com/in/manuel-reinfurt-1868a1153/'>View on LinkedIn</a>
 		</Section>
 
 		<Section title='Certifications'>
 			<Card
-				as='a'
-				heading='Lorem ipsum, dolor sit amet consectetur adipisicing.'
-				subheading='Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam dicta magni consequuntur corrupti.'
-				date='Mar 2024 - Mar 2024'
-				imagePath='/src/assets/about-astro.png'
-				altText='Lorem, ipsum dolor sit'
-				imageClass='h-11 w-auto md:-left-16'
-				href='https://www.google.com'
-			/>
+				heading='Microsoft Certified: DevOps Engineer Expert'
+				imagePath='/src/assets/microsoft-certified-expert-badge.png'
+				altText='Microsoft Certified Expert Badge'
+				imageClass='h-12 w-auto md:-left-16'
+				date='2024'
+			>
+			<a href="https://learn.microsoft.com/api/credentials/share/en-us/ManuelReinfurt-0160/227FB3B230C3E89A?sharingId=F62B9C4623335750">View on Microsoft Learn</a>	
+		</Card>
 			<Card
-				as='a'
-				heading='Lorem ipsum, dolor sit amet'
-				subheading='Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam dicta.'
-				date='Mar 2029 - Mar 2032'
-				imagePath='/src/assets/about-astro.png'
-				altText='Lorem, ipsum dolor sit'
-				imageClass='h-11 w-auto md:-left-16'
-				href='https://www.google.com'
+				heading='Microsoft Certified: Azure Developer Associate'
+				imagePath='/src/assets/microsoft-certified-associate-badge.png'
+				date='2024'
+				altText='Microsoft Certified Associate Badge'
+				imageClass='h-12 w-auto md:-left-16'
+			>
+			<a href="https://learn.microsoft.com/api/credentials/share/de-de/ManuelReinfurt-0160/274212D6298AD695?sharingId=F62B9C4623335750">View on Microsoft Learn</a>	
+			</Card>
+		</Section>
+
+		<Section title='Education'>
+			<Card
+				heading='Master of Science - Computer Science'
+				subheading='Darmstadt University of Applied Sciences'
+				date='2014-2018'
+			>
+			</Card>
+			<Card
+				heading='Bachelor of Science - Computer Science'
+				subheading='Darmstadt University of Applied Sciences'
+				date='2011-2014'
 			/>
 		</Section>
 
-		<Section title='Skills'>
-			<SkillLayout title='Languages' skills={languages} />
-			<SkillLayout title='Frontend' skills={frontend} />
+		<Section title='Technical Focus'>
+			<SkillLayout title='Cloud' skills={cloud} />
 			<SkillLayout title='Backend' skills={backend} />
+			<SkillLayout title='Continuous Integration & Delivery' skills={cicd} />
+			<SkillLayout title='Infrastructure as Code' skills={iac} />
 			<SkillLayout title='Others' skills={others} />
 		</Section>
 	</div>
-	<a
-		href='https://github.com/srleom/astro-theme-resume.git'
-		class='mt-16 flex flex-row items-center gap-x-3 rounded-3xl border border-input px-4 py-2 text-sm shadow-sm transition-all hover:shadow-md'
-	>
-		<span class='relative flex items-center justify-center'>
-			<span
-				class='absolute inline-flex h-2 w-2 animate-ping rounded-full border border-green-400 bg-green-400 opacity-75'
-			></span>
-			<span class='relative inline-flex h-2 w-2 rounded-full bg-green-400'></span>
-		</span>
-
-		<p class='font-medium'>Get free template</p>
-	</a>
 </PageLayout>
