@@ -2,14 +2,11 @@
 import PageLayout from '../layouts/BaseLayout.astro'
 import Section from '../components/Section.astro'
 import Card from '../components/Card.astro'
-import ProjectCard from '../components/ProjectCard.astro'
 import Label from '../components/Label.astro'
 import SkillLayout from '../components/SkillLayout.astro'
 
 import { Image } from 'astro:assets'
 import profileImage from '../assets/profile.jpeg'
-
-import { getAllPosts, sortMDByDate } from '@/utils'
 
 const cloud = ['Azure Cloud']
 const backend = ['.NET/C#']
@@ -17,9 +14,6 @@ const cicd = ['Azure DevOps', 'GitHub', 'GitLab']
 const iac = ['Azure Resource Manager', 'Azure Bicep']
 const others = ['Docker', 'Kubernetes']
 
-const MAX_POSTS = 10
-const allPosts = await getAllPosts()
-const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 ---
 
 <PageLayout meta={{ title: 'Home' }}>
