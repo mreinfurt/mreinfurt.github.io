@@ -92,38 +92,20 @@ const security = ["ISO 27001", "DevSecOps"];
 		<a href="https://www.linkedin.com/in/manuel-reinfurt-1868a1153/">View full work experience on LinkedIn</a>
 		<Card
 			heading="Cloud Architect & Developer"
-			subheading="Startup Company | Education"
+			subheading="Startup Company | IT"
 			date="2023-2025"
 		>
-		<li>Responsible for the 5-head development team and DevOps engineering culture</li>
-		<li>Responsible for the Azure Cloud Architecture and DevOps (including GitLab CI/CD pipelines)
-		<li>Lead Development for the user management on Azure Cloud using .NET 6/C#, MSSQL, Bicep, App Service, Functions, Service Bus, Docker and other tools</li>
-		<li>Development for the user management frontend using React (TypeScript)</li>
-    <li>Development for the Firebase-based backend for the mobile application with Node.js (TypeScript)</li>
-    <li>Specification and Implementation of Payment Processing</li>
 		</Card>
 		<Card
 			heading="Department Lead | New Business Solutions"
 			subheading="q.beyond AG | IT Service Provider"
 			date="2020-2022"
 		>
-		<li>Responsible for 8 directs and 69 people in total</li>
-    <li>Leading and working with Solution Architects to plan and build scalable cloud solutions for our customers</li>
-    <li>Consulting for key accounts with focus on Cloud Architecture (Cloud Migration, Cloud Application Architecture) & DevSecOps Culture</Card></li>
-		<li>Tech-Stack: Azure Cloud, C#/.NET 5+, IaC, Node.js (TypeScript), React (TypeScript), Kubernetes, GitLab, AWS, Flutter</li>
-		<li>Working together with the engineering leadership to develop and foster technological best practices throughout the teams and enabling a knowledge-sharing culture</li>
-		<li>Responsible for the department infrastructure with Infrastructure & DevOps Lead as part of my directs</li>
 		</Card>
 		<Card
 			heading="Domain Architect | Business Banking"
 			subheading="ING Frankfurt | Finance"
 			date="2020">
-		<li>Leading Domain service and products integration from overall architectural perspective</li>
-		<li>Tech-Stack: TOGAF, Arc42, Microservices-based inhouse application in Java with Docker, Kubernetes (OpenShift) in ING Private Cloud</li>
-		<li>Supporting Tribe Lead / Area Lead in defining product portfolio development strategy</li>
-		<li>Responsible for DevOps Workflow and Release Management Process within Jira, Confluence, ServiceNow</li>
-		<li>Communicating and promoting technology and architecture standards among teams</li>
-		<li>Leading and fulfilling Asset Governance Process in order to release our product within Business Banking Tribe on time</li>
 		</Card>
     </Section>
 
@@ -154,6 +136,16 @@ const security = ["ISO 27001", "DevSecOps"];
       </Card>
     </Section>
 
+    <Section title="Technical Focus">
+      <SkillLayout title="Cloud" skills={cloud} />
+      <SkillLayout title="Architecture" skills={architecture} />
+      <SkillLayout title="Backend" skills={backend} />
+      <SkillLayout title="Frontend" skills={frontend} />
+      <SkillLayout title="CI & CD" skills={cicd} />
+      <SkillLayout title="DevOps & IaC" skills={devops} />
+      <SkillLayout title="Security & Compliance" skills={security} />
+    </Section>
+
     <Section title="Education">
       <Card
         heading="Master of Science - Computer Science"
@@ -165,16 +157,6 @@ const security = ["ISO 27001", "DevSecOps"];
         subheading="Darmstadt University of Applied Sciences"
         date="2011-2014"
       />
-    </Section>
-
-    <Section title="Technical Focus">
-      <SkillLayout title="Cloud" skills={cloud} />
-      <SkillLayout title="Architecture" skills={architecture} />
-      <SkillLayout title="Backend" skills={backend} />
-      <SkillLayout title="Frontend" skills={frontend} />
-      <SkillLayout title="CI & CD" skills={cicd} />
-      <SkillLayout title="DevOps & IaC" skills={devops} />
-      <SkillLayout title="Security & Compliance" skills={security} />
     </Section>
   </div>
 </PageLayout>
